@@ -1,0 +1,75 @@
+.cards {
+    @include centreItems();
+    margin-top: 146px;
+    column-gap: 30px;
+    @include for-large-tablet() {
+        justify-content: center;
+    }
+    @include for-nav() {
+        flex-direction: column;
+        row-gap: 48px;
+    }
+    &__card {
+        text-align: -webkit-center;
+        &-around {
+            max-width: 106px;
+            min-height: 106px;
+            background-color: $text-color;
+            border-radius: 50%;
+            @include centreItems();
+            justify-content: center;
+            @include for-large-tablet() {
+                max-width: 88px;
+                min-height: 88px;
+            }
+            @include for-nav() {
+                max-width: 106px;
+                min-height: 106px;
+            }
+        }
+        &-title {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 25px;
+            text-align: center;
+            letter-spacing: -0.138462px;
+            color: $text-color;
+            margin: 32px 0 16px 0;
+            @include for-large-tablet() {
+                font-size: 18px;
+                line-height: 25px;
+                text-align: center;
+                letter-spacing: -0.138462px;
+            }
+            @include for-nav() {
+                font-size: 18px;
+                line-height: 25px;
+                text-align: center;
+                letter-spacing: -0.138462px;
+            }
+        }
+        &-text {
+            max-width: 350px;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 25px;
+            text-align: center;
+            letter-spacing: -0.115385px;
+            color: #6C8294;
+            @include for-large-tablet() {
+                font-size: 15px;
+                line-height: 25px;
+                max-width: 223px;
+                text-align: center;
+                letter-spacing: -0.115385px;
+            }
+            @include for-nav() {
+                font-size: 15px;
+                line-height: 25px;
+                text-align: center;
+                letter-spacing: -0.115385px;
+                min-width: 328px;
+            }
+        }
+    }
+}

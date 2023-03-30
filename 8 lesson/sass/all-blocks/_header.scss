@@ -1,0 +1,200 @@
+nav {
+    padding: 45px 0;
+    position: fixed;
+    margin-top: 0;
+    margin-bottom: 0;
+    z-index: 3000;
+    width: 100%;
+    top: 0;
+    box-shadow: 0px 10px 10px 0px rgb(0 0 0 / 5%);
+    background-color: aliceblue
+}
+
+.menu {
+    @include centreItems();
+    column-gap: 64px;
+    @include for-nav() {
+        justify-content: space-between;
+    }
+    &__input {
+        display: none;
+    }
+    &__btn {
+        display: none;
+        @include for-nav() {
+            display: block;
+        }
+    }
+    &__logo {
+        max-width: 134px;
+        width: 100%;
+        object-fit: cover;
+        object-fit: contain;
+        height: 37px;
+    }
+    &__bar {
+        @include centreItems();
+        justify-content: space-between;
+        width: 100%;
+        @include for-nav() {
+            flex-direction: column;
+            position: fixed;
+            background: #1B262F;
+            box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+            top: 0;
+            right: 0;
+            height: 100vh;
+            max-width: 300px;
+            justify-content: center;
+            z-index: 10;
+            right: -100%;
+            transition: 0.5s;
+            padding: 0 24px;
+        }
+    }
+    &__ul {
+        @include centreItems();
+        column-gap: 40px;
+        @include for-nav() {
+            flex-direction: column;
+            row-gap: 32px;
+            padding-bottom: 48px;
+            border-top: 1px solid #fbfcfe44;
+            padding-top: 43px;
+            width: 100%;
+        }
+        &-link {
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 18px;
+            color: $text-color;
+            opacity: 0.7;
+            text-decoration: none;
+            @include for-nav() {
+                color: $white-color;
+            }
+        }
+    }
+}
+
+.menu__input:checked~.menu__bar {
+    right: 0;
+    z-index: 12;
+}
+
+.menu__ul-x {
+    display: none;
+    @include for-nav() {
+        display: inline;
+        position: absolute;
+        top: 48px;
+        right: 24px;
+    }
+}
+
+.head {
+    @include centreItems();
+    justify-content: space-between;
+    padding-top: 150px;
+    @include for-large-tablet {
+        flex-direction: column;
+    }
+    @include for-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    &__block {
+        &-title {
+            font-family: $heading-fonts;
+            font-weight: 400;
+            font-size: 72px;
+            line-height: 72px;
+            letter-spacing: -0.553846px;
+            color: #36536B;
+            max-width: 546px;
+            margin-bottom: 21px;
+            @include for-large-tablet {
+                text-align: center;
+                max-width: 570px;
+                font-size: 48px;
+            }
+            @include for-nav {
+                max-width: 327px;
+                font-size: 32px;
+                font-weight: 400;
+                line-height: 36px;
+                position: relative;
+            }
+        }
+        @include for-large-tablet {
+            order: 2;
+        }
+        &-form {
+            background: #FBFCFE;
+            box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+            border-radius: 24px;
+            max-width: 445px;
+            min-height: 48px;
+            @include centreItems();
+            padding-left: 27px;
+            position: relative;
+            margin-bottom: 16px;
+            @include for-large-tablet() {
+                text-align: center;
+                left: 71px;
+            }
+            @include for-nav() {
+                left: -17px;
+            }
+            .head__block-form--input {
+                border: none;
+                 ::placeholder {
+                    font-weight: 700;
+                    font-size: 15px;
+                    line-height: 18px;
+                    color: #36536B;
+                    opacity: 0.5;
+                }
+            }
+            .btn {
+                position: absolute;
+                top: 0;
+                right: 0;
+                @include for-nav {
+                    position: absolute;
+                    top: 64px;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+        &-lable {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 18px;
+            color: #6C8294;
+            @include for-large-tablet() {
+                margin-left: 170px;
+            }
+            @include for-nav() {
+                position: absolute;
+                margin-top: 75px;
+                right: 86px;
+                left: -98px;
+            }
+            &--span {
+                &---link {
+                    font-weight: 700;
+                    font-size: 15px;
+                    line-height: 18px;
+                    color: $text-color;
+                    opacity: 0.7;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    &__block-img {
+        order: 1;
+    }
+}
